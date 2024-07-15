@@ -13,7 +13,7 @@
 #' @param dbg FALSE = silent; TRUE = verbose
 #' @importFrom dplyr left_join
 #' @importFrom deconstructSigs mut.to.sigs.input
-#' @import BSgenome.Hsapiens.UCSC.hg19
+#' @import BSgenome.Hsapiens.UCSC.hg38
 #'
 #' @return mutational signature fitting results for all samples
 #' @export
@@ -56,8 +56,8 @@ mm_fit_signatures = function(muts.input,
     }
 
     if(refcheck){
-      if(!refCheck(muts.input, BSgenome.Hsapiens.UCSC.hg19)){
-        stop("ERROR: Wrong reference genome, please provide mutational data aligned to hg19/GRCh37")
+      if(!refCheck(muts.input, BSgenome.Hsapiens.UCSC.hg38)){
+        stop("ERROR: Wrong reference genome, please provide mutational data aligned to hg38/GRCh38")
       }
     }
 
