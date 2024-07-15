@@ -11,10 +11,10 @@
 #' @importFrom reshape2 dcast
 #' @importFrom dplyr rowwise
 #' @importFrom stats poisson.test
-#' @importFrom TxDb.Hsapiens.UCSC.hg19.knownGene TxDb.Hsapiens.UCSC.hg19.knownGene
+#' @importFrom TxDb.Hsapiens.UCSC.hg38.knownGene TxDb.Hsapiens.UCSC.hg38.knownGene
 #' @importFrom GenomicRanges GRanges
 #' @importFrom IRanges IRanges
-#' @import BSgenome.Hsapiens.UCSC.hg19
+#' @import BSgenome.Hsapiens.UCSC.hg38
 #'
 
 getStrandBias <- function(data_5cols){
@@ -38,11 +38,11 @@ getStrandBias <- function(data_5cols){
   names(sample_list) <- samples
 
   # transcriptional strand annotation
-  genes_hg19 <- suppressMessages(GenomicFeatures::genes(TxDb.Hsapiens.UCSC.hg19.knownGene))
+  genes_hg38 <- suppressMessages(GenomicFeatures::genes(TxDb.Hsapiens.UCSC.hg38.knownGene))
 
   mut_mat_stranded <- MutationalPatterns::mut_matrix_stranded(vcf_list = sample_list,
-                                                              ref_genome = "BSgenome.Hsapiens.UCSC.hg19",
-                                                              ranges = genes_hg19,
+                                                              ref_genome = "BSgenome.Hsapiens.UCSC.hg38",
+                                                              ranges = genes_hg38,
                                                               mode = "transcription")
 
   mut_df_stranded <- as.data.frame(mut_mat_stranded) %>%
