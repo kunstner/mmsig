@@ -68,7 +68,7 @@ mm_fit_signatures = function(muts.input,
                                       pos = "pos",
                                       ref = "ref",
                                       alt = "alt",
-                                      bsg = BSgenome.Hsapiens.UCSC.hg19)
+                                      bsg = BSgenome.Hsapiens.UCSC.hg38)
 
     samples.muts <- as.data.frame(t(samples.muts))
 

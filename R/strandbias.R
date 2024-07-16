@@ -30,7 +30,7 @@ getStrandBias <- function(data_5cols){
                             IRanges(start=pos, end=pos),
                             REF= ref,
                             ALT=alt))
-    genome(temp_gr) <- "hg19"
+    genome(temp_gr) <- "hg38"
 
     sample_list[[i]]<- (temp_gr)
   }
