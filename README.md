@@ -22,6 +22,8 @@ fitting approach to accurately identify somatic mutational signatures in
 hematological malignancies. Commun Biol 4, 424 (2021).
 <https://doi.org/10.1038/s42003-021-01938-0>
 
+To run using GRCh38 as a reference, this project is a fork of the original repository (https://github.com/evenrus/mmsig). Note, the example data won't run because it is hg19!
+
 ## Installation
 
 You can install the development version from
@@ -29,7 +31,8 @@ You can install the development version from
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("evenrus/mmsig")
+# devtools::install_github("evenrus/mmsig")
+devtools::install_github("kunstner/mmsig")
 ```
 
 # Example
